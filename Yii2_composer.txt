@@ -1,0 +1,15 @@
+“окен ssh на github
+title: my_token
+key: e11cb137c0294c26b5d029e6c8b6bfc2d4332214
+
+ оманда обновлени€ composer до последней версии
+composer global require fxp/composer-asset-plugin --no-plugins  
+
+Ёта команда предназначена только дл€ обновлени€ Yii и его пр€мых зависимостей, если это необходимо. 
+в C:\OpenServer\domains\shintrayd.ru\basic
+composer require "yiisoft/yii2:~2.0.10" --update-with-dependencies
+
+https://github.com/yiisoft/yii2/blob/master/framework/UPGRADE.md#upgrade-from-yii-20-beta
+
+Ѕиблиотека 
+https://packagist.org/packages/

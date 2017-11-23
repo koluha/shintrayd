@@ -1,0 +1,11 @@
+проблема 1  The directory is not writable by the Web process: /var/www/test.sitengines.ru/public_html/basic/web/assets
+
+sudo chmod 777 /home//web/asset
+А также сделал это
+sudo chgrp root /home/nicjccom/public_html/asset
+
+
+Убираем лишнее в url
+1. Перенесите все файлы фреймворка на одну директорию вверх, 
+чтобы был такой путь:  http://yii/web/ 
+
