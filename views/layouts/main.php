@@ -182,6 +182,7 @@ FrontAsset::register($this);
                             <div class="fl_contact">
                                 <ul class="fl_contact_list">
                                     <li><span>Телефоны:</span><a href="">+7 (499) 391-91-88</a></li>
+                                    <li><a href="">+7 (906) 752-00-88</a></li>
                                     <li><a href="">+7 (906) 753-00-88</a></li>
                                     <li><span>Email:</span><a href="">shintrayd@bk.ru</a></li>
                                 </ul>
