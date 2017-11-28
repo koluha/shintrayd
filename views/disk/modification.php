@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="block_product clearfix">
             <div class="col-xs-3">
                 <div class="pr_img_block ">
-                    <?php $image = Disk::getImgDisk($data['model']); ?>
+                    <?php $image = Disk::getImgDisk($data['model'],$data['brand']); ?>
                     <div class="pr_img">
                         <img src="<?= $image ?>">
                         <label class="ch_search"></label>

@@ -209,15 +209,18 @@ class Disk {
         return $res;
     }
 
-    static function getImgDisk($model) {
+    static function getImgDisk($model,$vendor) {
         $model = trim($model);
         $scr = '/img/db_disk/';
         $exp = '.jpg';
         $noimage = '/img/noimg.jpg';
 
 
-        $img = Yii::$app->db->createCommand('SELECT img FROM db_specif_disk WHERE name_short=:model')
+        $img = Yii::$app->db->createCommand('SELECT disk.img FROM db_specif_disk as disk 
+                        INNER JOIN db_vendor_disk as vendor ON disk.vendor_key = vendor.id_vendor
+                        WHERE name_short=:model AND vendor.vendor=:vendor')
                 ->bindValue(':model', $model)
+                ->bindValue(':vendor', $vendor)
                 ->queryScalar();
         if ($img) {
             $image = $scr . $img . $exp;

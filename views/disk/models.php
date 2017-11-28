@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
             echo '<ul class="catalog_base_inner">';
             echo '<li>';
             echo ' <div class="catalog-it-inner">';
-            $image = Disk::getImgDisk($value['model']);
+            $image = Disk::getImgDisk($value['model'],$value['manufacturer']);
             $text=$season.'
                     <div class="img-cat"><img src="'.$image.'" width="155" alt=""></div>
                     <div class="caption">
