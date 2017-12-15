@@ -128,11 +128,13 @@ class SiteController extends Controller {
     }
 
     public function actionTest99() {
-        $found = 'Более 20';
-        if (preg_match("/Более/", 'Более 20')) {
-            echo "Вхождение найдено.";
-        } else {
-            echo "Вхождение не найдено.";
+        $str = 'Fast Fifteen blaze';
+        $arr = explode(" ", $str);
+
+        //Последний элемент
+        if (count($arr) > 1) {
+            $strEnd = array_pop($arr);
+            echo $strEnd;
         }
     }
 

@@ -209,11 +209,53 @@ class Disk {
         return $res;
     }
 
-    static function getImgDisk($model,$vendor) {
+    static function getImgDisk($model, $vendor) {
         $model = trim($model);
         $scr = '/img/db_disk/';
         $exp = '.jpg';
         $noimage = '/img/noimg.jpg';
+
+
+        //Заменители
+        if ($model == 'Fast Fifteen') {
+            $model = 'Fast Fifteen Dark';
+        }
+        if ($model == 'Kendo') {
+            $model = 'Kendo Black Polished';
+        }
+
+        if (($vendor == 'Legeartis Concept') || ($vendor == 'Legeartis Optima')) {
+            $vendor = 'LegeArtis';
+        }
+
+        if (($vendor == 'RPLC') || ($vendor == 'RPLC-Wheels')) {
+            $vendor = 'Replica';
+        }
+
+
+        if ($vendor == 'Top Driver') {
+            $vendor = 'Replica';
+        }
+        if (($vendor == 'Yamato Samurai') || ($vendor == 'Yamato Segun')) {
+            $vendor = 'Yamato';
+        }
+
+        if ($vendor == 'КиК') {
+            $vendor = 'K&K';
+        }
+
+
+
+        if ($vendor == 'Kronprinz') {
+            //Название дисков отделяем и уберем первое слово
+            $arr = explode(" ", $model); //Название диска на массив
+            if (!$arr[1]) {
+                $arr = explode("-", $model); //Название диска на массив
+            }
+            $model = trim($arr[1]);
+        }
+
+
 
 
         $img = Yii::$app->db->createCommand('SELECT disk.img FROM db_specif_disk as disk 
@@ -222,11 +264,35 @@ class Disk {
                 ->bindValue(':model', $model)
                 ->bindValue(':vendor', $vendor)
                 ->queryScalar();
+
         if ($img) {
             $image = $scr . $img . $exp;
             return $image;
-        } else {
-            return $noimage;
+        } elseif ($img == '') {
+
+            //Попробуем отделить последний элемент в соседнем столбце
+            $arr = explode(" ", $model); //Название диска на массив
+            //Последний элемент
+            if (count($arr) > 1) {
+                //Запись последнего слова в перенную
+                $strend = array_pop($arr);
+                $model = implode(" ", $arr);
+
+                $img = Yii::$app->db->createCommand('SELECT disk.img FROM db_specif_disk as disk 
+                        INNER JOIN db_vendor_disk as vendor ON disk.vendor_key = vendor.id_vendor
+                        WHERE name_short=:model AND vendor.vendor=:vendor AND disk.product_name LIKE \'%' . $strend . '%\'')
+                        ->bindValue(':model', $model)
+                        ->bindValue(':vendor', $vendor)
+                        ->queryScalar();
+                if ($img) {
+                    $image = $scr . $img . $exp;
+                    return $image;
+                } else {
+                    return $noimage;
+                }
+            } else {
+                return $noimage;
+            }
         }
     }
 
