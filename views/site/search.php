@@ -150,7 +150,7 @@ $ob_tyre = new Tyre();
                         foreach ($params as $param) {
                             $p.=$param;
                         }
-                        $image = Disk::getImgDisk($value['model']);
+                        $image = Disk::getImgDisk($value['model'],$value['manufacturer']);
                         echo '<div class="item">';
                         $ch_block_img = "<div class='ch_block_img'>
                         <div class='ch_img'>
