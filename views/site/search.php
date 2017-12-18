@@ -154,7 +154,7 @@ $ob_tyre = new Tyre();
                         echo '<div class="item">';
                         $ch_block_img = "<div class='ch_block_img'>
                         <div class='ch_img'>
-                            <img src='$image'>
+                             <img class='img_disk' src='$image'>
                             <label class='ch_search'></label>
                         </div>
                     </div> 

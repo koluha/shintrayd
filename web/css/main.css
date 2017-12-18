@@ -1143,6 +1143,12 @@ select {
     height: 100%;
 }
 
+.img_disk{
+    vertical-align: middle!important;
+    width: 108px!important;
+    height: auto!important;
+    padding-top: 20%!important;
+}
 
 .ch_block_img_r{
     position: relative;
@@ -2044,7 +2050,7 @@ p .info_pr{
 
 .img_list_disk img{
     display: block;
-    margin-left: 261px;
+    margin-left: 159px;
     margin-top: -23px;
     position: absolute;
 }
