@@ -128,12 +128,10 @@ class SiteController extends Controller {
     }
 
     public function actionTest99() {
-        $found = 'Более 20';
-        if (preg_match("/Более/", 'Более 20')) {
-            echo "Вхождение найдено.";
-        } else {
-            echo "Вхождение не найдено.";
-        }
+        Yii::$app->db->createCommand('DELETE t1.* FROM my_table t1
+JOIN (SELECT min(id) as minid, brand, product FROM my_table GROUP BY brand, product) t2
+ON t1.id<>t2.minid AND t1.brand=t2.brand AND t1.product=t2.product ')
+                ->execute();
     }
 
 }
