@@ -243,6 +243,12 @@ class Disk {
         if ($vendor == 'КиК') {
             $vendor = 'K&K';
         }
+        
+         if ($vendor =='DOTZ 4X4 STAHLRADER') {
+            $vendor = 'Dotz';
+        }
+        
+        
 
 
 
