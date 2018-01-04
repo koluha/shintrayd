@@ -1,7 +1,10 @@
 <?php
 
 return [
-    'adminEmail' => 'kolyan2288@mail.ru',
-    'pathUploads' => realpath(dirname(__FILE__)).'\..\web\file\\',
-    'season_tyre'=>'WS' // S, W, SW, WS
+'adminEmail' => 'kolyan2288@mail.ru',
+ 'pathUploads' => realpath(dirname(__FILE__)).'\..\web\file\\',
+ 'season_tyre' => 'WS', // S, W, SW, WS
+ 'meta_title' => 'Шины и диски, шиномонтаж, автосервис, интернет-магазина N-TYRE шин и дисков',
+ 'meta_keywords' => 'интернет магазин шин,интернет магазин дисков, шиномонтаж дешего, автосервис качественно,продажа шины и диски',
+ 'meta_description' => 'Интернет-магазин продажа шин и дисков,шиномонтаж и автосервис всех видов работ',
 ];

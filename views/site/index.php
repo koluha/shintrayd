@@ -11,6 +11,24 @@ $ob_tyre = new Tyre();
 $ob_disk = new Disk();
 $ob_podbor = new Podbor();
 $session = Yii::$app->session;
+
+$this->title='';
+$meta_description = '';
+$meta_keywords = '';
+
+$this->params['breadcrumbs'][] = $this->title;
+
+$this->title = $this->title ? $this->title : Yii::$app->params['meta_title'];
+
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => $meta_keywords ? $meta_keywords : Yii::$app->params['meta_keywords'],
+]);
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => $meta_description ? $meta_description : Yii::$app->params['meta_description'],
+]);
+
 ?>
 <!-- main-filter-tabs (основной блок фильтр) -->
 <div class="container main-filter-tabs">

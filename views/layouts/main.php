@@ -16,11 +16,14 @@ FrontAsset::register($this);
 <!DOCTYPE html>
 <html>
     <head>
+        <title><?= Html::encode($this->title) ?></title>
+        <?php $this->head() ?>
+        <?= Html::csrfMetaTags() ?>
+        
         <meta charset="<?= Yii::$app->charset ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <?= Html::csrfMetaTags() ?>
-        <title>Магазин шин и дисков</title>
-        <?php $this->head() ?>
+
+
 
         <!--  <meta name="description" content="" />-->
         <!-- <meta name = "viewport" content = "width = 1200">-->
@@ -63,17 +66,17 @@ FrontAsset::register($this);
                                     <ul>
                                         <?php
                                         /*
-                                        if (Yii::$app->user->isGuest) {
-                                            echo "<i class = 'fa fa-user' aria-hidden = 'true'></i>
-                                            <li><a href = '" . Url::toRoute('user/registration') . "'>Регистрация</a></li>
-                                            <i class = 'fa fa-arrow-circle-right' aria-hidden = 'true'></i>
-                                            <li><a href = '" . Url::toRoute('user/login') . "'>Войти</a></li>";
-                                        } else {
-                                            echo "<i class = 'fa fa-user' aria-hidden = 'true'></i>
-                                            <li><a href = '" . Url::toRoute('user/profile') . "'>Личный кабинет (" . Yii::$app->user->identity->username . ")</a></li>";
-                                            echo "<i class = 'fa fa-user' aria-hidden = 'true'></i>
-                                            <li><a href = '" . Url::toRoute('user/logout') . "'>Выход</a></li>";
-                                        }
+                                          if (Yii::$app->user->isGuest) {
+                                          echo "<i class = 'fa fa-user' aria-hidden = 'true'></i>
+                                          <li><a href = '" . Url::toRoute('user/registration') . "'>Регистрация</a></li>
+                                          <i class = 'fa fa-arrow-circle-right' aria-hidden = 'true'></i>
+                                          <li><a href = '" . Url::toRoute('user/login') . "'>Войти</a></li>";
+                                          } else {
+                                          echo "<i class = 'fa fa-user' aria-hidden = 'true'></i>
+                                          <li><a href = '" . Url::toRoute('user/profile') . "'>Личный кабинет (" . Yii::$app->user->identity->username . ")</a></li>";
+                                          echo "<i class = 'fa fa-user' aria-hidden = 'true'></i>
+                                          <li><a href = '" . Url::toRoute('user/logout') . "'>Выход</a></li>";
+                                          }
                                          * 
                                          */
                                         ?>
