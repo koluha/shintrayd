@@ -116,7 +116,7 @@ $ob_tyre = new Tyre();
                                             echo ' </tr>';
                                             //  echo ' <td>' . yii\bootstrap\Html::a($value['name'], '') . '</td>';
 
-                                            echo ' <td>&nbsp;' . Html::a($value['shirina'] . '/' . $value['profil'] . '&nbsp;' . $value['diametr'], ['/tyre', 'brand' => $data['link_brand'],
+                                            echo ' <td>&nbsp;' . Html::a($value['shirina'] . '/' . $value['profil'] . '&nbsp;' . $value['diametr'], ['tyre/index', 'brand' => $data['link_brand'],
                                                 'season' => $data['season'],
                                                 'model' => $data['link_model'],
                                                 'param' => Tyre::url_param_tyre($value['shirina'], $value['profil'], $value['diametr']),

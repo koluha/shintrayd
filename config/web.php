@@ -77,22 +77,35 @@ $config = [
             'showScriptName' => false, // запрещаем r= routes
             'rules' => [
                 '/' => 'site/index',
-               '<action:\w+>' => 'site/<action>',
+                 
+                //Поиск через форму url tyre controller index
+                '/tyre_search' => 'tyre/search',
+                '/tyre_disk' => 'disk/search',
+                //'/tyre_search/<brand>/<season>/<shirina>/<profil>/<diametr>/<spikes>/<not_spikes>/<runflat>' => 'tyre/search',
 
+                //Поиск по артикулу 
+                '/search/<article>' => 'site/search',
                 
+                //Каталог url tyre controller index
+                '/tyre/<brand>/<season>/<model>/<param>/<coefficient>/<code77>' => 'tyre/index',
+                '/tyre/<brand>/<season>/<model>' => 'tyre/index',
+                '/tyre/<brand>' => 'tyre/index',
+                '/tyre' => 'tyre/index',
+                
+                //Каталог url disk controller index
+                '/disk/<brand>/<model>/<code77>' => 'disk/index',
+                '/disk/<brand>/<model>' => 'disk/index',
+                '/disk/<brand>' => 'disk/index',
+                '/disk' => 'disk/index',
+                
+                '<action:\w+>' => 'site/<action>',
                 '/admin' => 'admin/default/index',
-                
-
                 '<controller:\w+>/<id:\d+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
-
                 '<module:\w+>/<controller:\w+>/<action:\w+>/<id:\d+>' => '<module>/<controller>/<action>',
                 '<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
                 '<module:\w+>/<controller:\w+>' => '<module>/<controller>/index',
-                
-                
-                
             ],
         ],
     ],

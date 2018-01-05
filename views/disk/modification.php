@@ -99,7 +99,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                         if ($value['diametr'] == $d) {
                                             echo ' </tr>';
 
-                                            echo ' <td>' . yii\bootstrap\Html::a(' R' . $value['diametr'] . ' / ' . $value['diametr_width'] . 'J PCD ' . $value['pcd'] . 'x' . $value['x_pcd'] . ' ET ' . $value['vilet'] . ' ЦО ' . $value['co'], ['/disk', 'brand' => $value['link_manufacturer'],
+                                            echo ' <td>' . yii\bootstrap\Html::a(' R' . $value['diametr'] . ' / ' . $value['diametr_width'] . 'J PCD ' . $value['pcd'] . 'x' . $value['x_pcd'] . ' ET ' . $value['vilet'] . ' ЦО ' . $value['co'], ['disk/index', 'brand' => $value['link_manufacturer'],
                                                 'model' => $value['link_model'],
                                                 'code77' => $value['code77'],
                                             ]) . '</td>';

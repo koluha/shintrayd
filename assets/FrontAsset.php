@@ -16,6 +16,7 @@ class FrontAsset extends AssetBundle {
         'js/command.js',
         'js/dep_drop.js',
         'js/number_format.js'
+
     ];
     public $depends = [
         'yii\web\YiiAsset',

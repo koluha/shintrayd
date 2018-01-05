@@ -59,12 +59,12 @@ $this->registerMetaTag([
             echo '<ul class="catalog_base">';
             echo '<li>';
             echo '<div class="catalog-it">';
-            echo Html::a(ucfirst(strtolower($value['brand'])), ['/tyre', 'brand' => $value['link_brand']], ['class' => 'cat-link_1']);
+            echo Html::a(ucfirst(strtolower($value['brand'])), ['tyre/index', 'brand' => $value['link_brand']], ['class' => 'cat-link_1']);
 
             $css_img = 'cat-link_2 img_155x42_' . ucfirst(strtolower($value['brand']));
-            echo Html::a('<div class=' . '"' . $css_img . '"' . '></div>', ['/tyre', 'brand' => $value['link_brand']], ['class' => 'cat-link_2']);
-            echo Html::a('<label class="icon-winter"><span>Зимние</span></label>', ['/tyre', 'brand' => $value['link_brand'], 'season' => 'W'], ['class' => 'cat-link_3']);
-            echo Html::a('<label class="icon-summer"><span>Летние</span></label>', ['/tyre', 'brand' => $value['link_brand'], 'season' => 'S'], ['class' => 'cat-link_4']);
+            echo Html::a('<div class=' . '"' . $css_img . '"' . '></div>', ['tyre/index', 'brand' => $value['link_brand']], ['class' => 'cat-link_2']);
+            echo Html::a('<label class="icon-winter"><span>Зимние</span></label>', ['tyre/index', 'brand' => $value['link_brand'], 'season' => 'W'], ['class' => 'cat-link_3']);
+            echo Html::a('<label class="icon-summer"><span>Летние</span></label>', ['tyre/index', 'brand' => $value['link_brand'], 'season' => 'S'], ['class' => 'cat-link_4']);
             echo '</div>';
             echo '</li>';
             echo '</ul>';

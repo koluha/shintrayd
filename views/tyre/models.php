@@ -56,7 +56,7 @@ foreach ($data['date_models'] as $value) {
                         <span>' . strtoupper($value['brand']) . ' ' . strtoupper($value['model']) . '</span>
                     </div>';
         $option = ['class' => 'cat-link_1 cat-link_1_pop'];
-        echo Html::a($text, ['/tyre', 'brand' => $value['link_brand'], 'season' => $value['season'], 'model' => $value['link_model']], $option);
+        echo Html::a($text, ['tyre/index', 'brand' => $value['link_brand'], 'season' => $value['season'], 'model' => $value['link_model']], $option);
         echo '</li>';
         echo '</ul>';
     }

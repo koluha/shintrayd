@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <span>'.strtoupper($value['manufacturer']).' '.strtoupper($value['model']).'</span>
                     </div>';
             $option=['class' => 'cat-link_1 cat-link_1_pop'];
-            echo Html::a($text, ['/disk', 'brand' => $value['link_manufacturer'], 'model' => $value['link_model']],$option);
+            echo Html::a($text, ['disk/index', 'brand' => $value['link_manufacturer'], 'model' => $value['link_model']],$option);
             echo '</li>';
             echo '</ul>';
 

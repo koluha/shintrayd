@@ -41,9 +41,9 @@ $this->registerMetaTag([
             echo '<ul class="catalog_base">';
             echo '<li>';
             echo '<div class="catalog-it">';
-            echo Html::a(ucfirst(strtolower($value['manufacturer'])), ['/disk', 'brand' => $value['link_manufacturer']], ['class' => 'cat-link_1']);
+            echo Html::a(ucfirst(strtolower($value['manufacturer'])), ['disk/index', 'brand' => $value['link_manufacturer']], ['class' => 'cat-link_1']);
             $url_img=strtr(strtolower($value['manufacturer']), " ", "_");
-            echo Html::a(Html::img('/img/brands_disk/'.$url_img.'.jpg', [ 'height' => '42']), ['/disk', 'brand' => $value['link_manufacturer']], ['class' => 'cat-link_2']);
+            echo Html::a(Html::img('/img/brands_disk/'.$url_img.'.jpg', [ 'height' => '42']), ['disk/index', 'brand' => $value['link_manufacturer']], ['class' => 'cat-link_2']);
             echo '</div>';
             echo '</li>';
             echo '</ul>';

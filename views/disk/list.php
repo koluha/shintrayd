@@ -95,7 +95,7 @@ $session = Yii::$app->session;
 
                     $ch_block_desc = "<div class='ch_block_desc'>
                         <div class='text_ch_tit'>
-                              " . Html::a($value['manufacturer'] . ' ' . $value['model'], ['/disk',
+                              " . Html::a($value['manufacturer'] . ' ' . $value['model'], ['disk/index',
                                 'brand' => $value['link_manufacturer'],
                                 'model' => $value['link_model'],
                                 'code77' => $value['code77'],
