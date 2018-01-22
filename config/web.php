@@ -77,27 +77,22 @@ $config = [
             'showScriptName' => false, // запрещаем r= routes
             'rules' => [
                 '/' => 'site/index',
-                 
                 //Поиск через форму url tyre controller index
                 '/tyre_search' => 'tyre/search',
                 '/tyre_disk' => 'disk/search',
                 //'/tyre_search/<brand>/<season>/<shirina>/<profil>/<diametr>/<spikes>/<not_spikes>/<runflat>' => 'tyre/search',
-
                 //Поиск по артикулу 
                 '/search/<article>' => 'site/search',
-                
                 //Каталог url tyre controller index
                 '/tyre/<brand>/<season>/<model>/<param>/<coefficient>/<code77>' => 'tyre/index',
                 '/tyre/<brand>/<season>/<model>' => 'tyre/index',
                 '/tyre/<brand>' => 'tyre/index',
                 '/tyre' => 'tyre/index',
-                
                 //Каталог url disk controller index
                 '/disk/<brand>/<model>/<code77>' => 'disk/index',
                 '/disk/<brand>/<model>' => 'disk/index',
                 '/disk/<brand>' => 'disk/index',
                 '/disk' => 'disk/index',
-                
                 '<action:\w+>' => 'site/<action>',
                 '/admin' => 'admin/default/index',
                 '<controller:\w+>/<id:\d+>' => '<controller>/view',
@@ -108,6 +103,18 @@ $config = [
                 '<module:\w+>/<controller:\w+>' => '<module>/<controller>/index',
             ],
         ],
+    ],
+    'controllerMap' => [
+        'elfinder' => [
+            'class' => 'mihaildev\elfinder\PathController',
+            'access' => ['@', '?'],
+            'root' => [
+                'baseUrl' => '@web',
+                'basePath' => '@webroot',
+                'path' => 'img/',
+                'name' => 'Global'
+            ],
+        ]
     ],
     'params' => $params,
 ];

@@ -6,6 +6,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 use yii\helpers\Url;
+ 
 
 AppAsset::register($this);
 ?>
@@ -37,6 +38,7 @@ AppAsset::register($this);
                 'items' => [
                     ['label' => 'Заказы', 'url' => ['/admin/order/index']],
                     ['label' => 'Загрузка прайса', 'url' => ['/admin/file/index']],
+                    ['label' => 'Менеджер файлов', 'url' => ['/admin/default/m_file']],
                     ['label' => 'Спецификация шин', 'url' => ['/admin/speciftire/index']],
                     ['label' => 'Спецификация дисков', 'url' => ['/admin/specifdisk/index']],
                     Yii::$app->getModule('admin')->get('admin')->isGuest ? (

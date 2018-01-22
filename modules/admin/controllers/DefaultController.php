@@ -70,5 +70,9 @@ class DefaultController extends AppAdminController {
         Yii::$app->getModule('admin')->get('admin')->logout(FALSE);
         return $this->redirect('/admin');
     }
+    
+      public function actionM_file() {
+        return $this->render('m_file');
+    }
 
 }
