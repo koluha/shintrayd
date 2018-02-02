@@ -33,12 +33,23 @@ $this->registerMetaTag([
 <div class="container">
     <div class="row">
         <div class="site-about">
-            <h1><?= Html::encode($this->title) ?></h1>
+            <h1>Автосервис «N-TYRE.NET» предлагает услуги качественного ремонта автомобилей европейских и японских марок, по приемлемым ценам.  </h1>
+            <p>
+                Мы оказываем услуги по ремонту и обслуживанию автомобилей. Наши клиенты могут рассчитывать на качественный и быстрый автосервис, здесь доступные и адекватные цены.
+            </p>
+            <p>
+                Каждый клиент может лично наблюдать за ремонтом автомобиля, чтобы удостовериться в обнаруженных неисправностях, а так же убедиться в квалификации наших специалистов. Вы всегда будете знать, кто из работников центра отвечает за авто и кто выполняет ремонт.
+            </p>
+            
             <ul>
-                <li><a href="<?php echo Url::toRoute('site/washinginjector'); ?>">Промывка инжектора</a></li>
-                <li><a href="<?php echo Url::toRoute('site/refuelingairconditioners'); ?>">Заправка и ремонт автокондиционеров</a></li>
-                <li><a href="<?php echo Url::toRoute('site/repairofdisks'); ?>">Ремонт дисков</a></li>
-            </ul>
+                <li><a href="<?php echo Url::toRoute('site/'); ?>">Диагностика автомобиля</a></li>
+                <li><a href="<?php echo Url::toRoute('site/'); ?>">Ремонт как бензиновых, так и дизельных двигателей</a></li>
+                <li><a href="<?php echo Url::toRoute('site/'); ?>">Ремонт и обслуживание трансмиссии</a></li>
+                <li><a href="<?php echo Url::toRoute('site/'); ?>">Ремонт и обслуживание тормозной системы</a></li>
+                <li><a href="<?php echo Url::toRoute('site/'); ?>">Промывка инжектора</a></li>
+                <li><a href="<?php echo Url::toRoute('site/'); ?>">Заправка и ремонт автокондиционеров</a></li>
+                <li><a href="<?php echo Url::toRoute('site/'); ?>">Ремонт дисков</a></li>
+             </ul>
         </div>
     </div>
 </div>
