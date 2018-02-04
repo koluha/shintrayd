@@ -2256,3 +2256,42 @@ p .info_pr{
 }
 
 /* End Корзина */
+
+/* End Страница автосервиса */
+
+.autoservice{
+    display: block;
+    margin: auto; /* Выравниваем по центру */
+    list-style: none;
+}
+.autoservice li{
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    margin-top: 50px;
+}
+.autoservice li a{
+    display: block;
+    height: 100%; 
+}
+.autoservice li a img{
+    opacity:.60!important;  
+}
+.autoservice li a img:hover{
+    opacity:1!important;  
+}
+
+.autoservice li span{ 
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 50px;
+    font-size: 15px;
+    margin-top: -55px;
+    font-weight: 700;
+}​
+
+
+
+/* End Страница автосервиса */
