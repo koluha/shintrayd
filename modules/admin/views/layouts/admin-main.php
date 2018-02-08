@@ -41,6 +41,7 @@ AppAsset::register($this);
                     ['label' => 'Менеджер файлов', 'url' => ['/admin/default/m_file']],
                     ['label' => 'Спецификация шин', 'url' => ['/admin/speciftire/index']],
                     ['label' => 'Спецификация дисков', 'url' => ['/admin/specifdisk/index']],
+                    ['label' => 'Страницы', 'url' => ['/admin/page/index']],
                     Yii::$app->getModule('admin')->get('admin')->isGuest ? (
                             ['label' => 'Вход', 'url' => ['/admin/default/adminlogin']]
                             ) : (

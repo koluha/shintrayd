@@ -40,47 +40,61 @@ $this->registerMetaTag([
             <p>
                 Каждый клиент может лично наблюдать за ремонтом автомобиля, чтобы удостовериться в обнаруженных неисправностях, а так же убедиться в квалификации наших специалистов. Вы всегда будете знать, кто из работников центра отвечает за авто и кто выполняет ремонт.
             </p>
-
             <ul class="autoservice">
                 <li>
-                    <span>Сварка Аргон(TIG\MIG)</span>
-                    <?= Html::a(Html::img("/img/page/Svarka_Argon.jpg", ['class' => 'img_au', 'alt' => 'Сварка Аргон(TIG\MIG)', 'width' => '320', 'height' => '200']), ['site/']) ?>
+                    <?=
+                    Html::a('<span class="sp_au">Сварка Аргон(TIG\MIG)</span>', ['site/'],['class' => 'svarka_argon']);
+                    ?>
                 </li>
                 <li>
-                    <span>Тонировка и бронепленка</span>
-                    <?= Html::a(Html::img("/img/page/Tonirovka_i_broneplenka.jpg", ['alt' => 'Тонировка и бронепленка', 'width' => '320', 'height' => '200']), ['site/']) ?>
+                    <?=
+                    Html::a('<span class="sp_au">Тонировка и бронепленка</span>',['site/'], ['class' => 'tonirovka_i_broneplenka']);
+                    ?>
                 </li>
                 <li>
-                    <span>Автозапчасти (в наличии и под заказ)</span>
-                    <?= Html::a(Html::img("/img/page/Avtozapchasti_v_nalichii_i_pod_zakaz.jpg", ['alt' => 'Автозапчасти (в наличии и под заказ)', 'width' => '320', 'height' => '200']), ['site/']) ?>
+                    <?=
+                    Html::a('<span class="sp_au">Автозапчасти (в наличии и под заказ)</span>',['site/'], ['class' => 'avtozapchasti']);
+                    ?>
                 </li>
                 <li>
-                    <span>Компьютерная диагностика автомобиля</span>
-                    <?= Html::a(Html::img("/img/page/Kompyuternaya_diagnostika_avtomobilya.jpg", ['alt' => 'Компьютерная диагностика автомобиля', 'width' => '320', 'height' => '200']), ['site/']) ?>
+                    <?=
+                    Html::a('<span class="sp_au">Компьютерная диагностика автомобиля</span>',['site/'], ['class' => 'komputernaja_diagnostika']);
+                    ?>
                 </li>
                 <li>
-                    <span>Ремонт как бензиновых, так и дизельных двигателей</span>
-                    <?= Html::a(Html::img("/img/page/Remont_kak_benzinovyh_tak_i_dizelnyh_dvigatelej.jpg", ['alt' => 'Ремонт как бензиновых, так и дизельных двигателей', 'width' => '320', 'height' => '200']), ['site/']) ?>
+                    <?=
+                    Html::a('<span class="sp_au">Ремонт двигателей</span>',['site/'], ['class' => 'remont_dvigatelej']);
+                    ?>
                 </li>
                 <li>
-                    <span>Ремонт и обслуживание трансмиссии</span>
-                    <?= Html::a(Html::img("/img/page/Remont_i_obsluzhivanie_transmissii.jpeg", ['alt' => 'Ремонт и обслуживание трансмиссии', 'width' => '320', 'height' => '200']), ['site/']) ?>
+                    <?=
+                    Html::a('<span class="sp_au">Ремонт и обслуживание трансмиссии</span>',['site/'], ['class' => 'remont_transmissii']);
+                    ?>
                 </li>
                 <li>
-                    <span>Ремонт и обслуживание тормозной системы</span>
-                    <?= Html::a(Html::img("/img/page/Remont_i_obsluzhivanie_tormoznoj_sistemy.jpg", ['alt' => 'Ремонт и обслуживание тормозной системы', 'width' => '320', 'height' => '200']), ['site/']) ?>
+                    <?=
+                    Html::a('<span class="sp_au">Ремонт и обслуживание тормозной системы</span>',['site/'], ['class' => 'remont_tormoznoj_sistemy']);
+                    ?>
                 </li>
                 <li>
-                    <span>Промывка инжектора</span>
-                    <?= Html::a(Html::img("/img/page/Promyvka_inzhektora.jpg", ['alt' => 'Промывка инжектора', 'width' => '320', 'height' => '200']), ['site/']) ?>
+                    <?=
+                    Html::a('<span class="sp_au">Промывка инжектора</span>',['site/'], ['class' => 'promyvka_inzhektora']);
+                    ?>
                 </li>
                 <li>
-                    <span>Заправка и ремонт автокондиционеров</span>
-                    <?= Html::a(Html::img("/img/page/Zapravka_i_remont_avtokondicionerov.jpg", ['alt' => 'Заправка и ремонт автокондиционеров', 'width' => '320', 'height' => '200']), ['site/']) ?>
+                    <?=
+                    Html::a('<span class="sp_au">Заправка и ремонт автокондиционеров</span>',['site/'], ['class' => 'zapravka_i_remont_avtokondicionerov']);
+                    ?>
                 </li>
                 <li>
-                    <span>Ремонт дисков</span>
-                    <?= Html::a(Html::img("/img/page/Remont_diskov.jpg", ['alt' => 'Ремонт дисков', 'width' => '320', 'height' => '200']), ['site/']) ?>
+                    <?=
+                    Html::a('<span class="sp_au">Ремонт дисков</span>',['site/'], ['class' => 'remont_diskov']);
+                    ?>
+                </li>
+                <li>
+                    <?=
+                    Html::a('<span class="sp_au">Покраска дисков</span>',['site/'], ['class' => 'pokraska_diskov']);
+                    ?>
                 </li>
             </ul>
         </div>
