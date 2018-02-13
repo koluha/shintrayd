@@ -19,8 +19,6 @@ class PageController extends AppAdminController {
         }
     }
 
-
-
     public function actionTest() {
         $page = Page::find()->where(['url' => 'privet'])->scalar();
         if (!$page) {
@@ -85,16 +83,19 @@ class PageController extends AppAdminController {
 
         $model = $this->findModel($id);
 
-        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
 
-            $model->attributes = [
-                'title' => $model->title,
-                'content' => $model->content,
-                'url' => Yii::$app->myhelper->translitUrl($model->url),
-                'meta_title' => $model->meta_title,
-                'meta_keyword' => $model->meta_keyword,
-                'meta_description' => $model->meta_description
-            ]; 
+        $model->attributes = [
+            'title' => $model->title,
+            'content' => $model->content,
+            'url' => Yii::$app->myhelper->translitUrl($model->url),
+            'meta_title' => $model->meta_title,
+            'meta_keyword' => $model->meta_keyword,
+            'meta_description' => $model->meta_description
+        ];
+
+
+
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
 
             $model->save();
             return $this->redirect(['view', 'id' => $model->id]);

@@ -109,10 +109,8 @@ $config = [
             'class' => 'mihaildev\elfinder\PathController',
             'access' => ['@', '?'],
             'root' => [
-                'baseUrl' => '@web',
-                'basePath' => '@webroot',
                 'path' => 'img/',
-                'name' => 'Global'
+                'name' => 'root'
             ],
         ]
     ],

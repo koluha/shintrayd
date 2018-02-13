@@ -44,12 +44,12 @@ class Page extends \yii\db\ActiveRecord {
            // $count = Page::find()->where(['url' => $this->url])->scalar();
             //Если новая запись
             
-            //$count = Page::find()->where(['url' => 'bmw'])->andWhere(['!=','id', 16])->count();
+          //  $count = Page::find()->where(['url' => $this->url])->andWhere(['!=','id', $this->id])->count();
            
-            $count=FALSE;
-            if ($count==FALSE) {
-                $this->addError($attribute, 'Задайте другой URL, такой уже имеется.');
-            }
+                     
+           // if ($count>0) {
+           //     $this->addError($attribute, 'Задайте другой URL, такой уже имеется.');
+           // }
 
             //Если редактируемая запись
             // Если id равно записи то редактировать можно
