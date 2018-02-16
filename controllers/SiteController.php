@@ -53,6 +53,19 @@ class SiteController extends Controller {
         }
     }
 
+    public function actionPage() {
+        $request = Yii::$app->request;
+        $url = $request->get('url');
+
+        $data = Yii::$app->db->createCommand('SELECT * FROM tb_page WHERE url=:url')
+                ->bindValue(':url', $url)
+                ->queryOne();
+
+        return $this->render('page', [
+                    'data' => $data
+        ]);
+    }
+
     public function actionAbout() {
         return $this->render('about');
     }
@@ -102,17 +115,17 @@ class SiteController extends Controller {
         return $this->render('recycling');
     }
 
-//Услуги
+    //Услуги
     public function actionServices() {
         return $this->render('services');
     }
 
-//Акции
+    //Акции
     public function actionPromotions() {
         return $this->render('promotions');
     }
 
-//Аксессуары
+    //Аксессуары
     public function actionAccessories() {
         return $this->render('accessories');
     }
@@ -126,25 +139,5 @@ class SiteController extends Controller {
     public function actionQuestions_answers() {
         return $this->render('questions_answers');
     }
-
- /*   public function actionTest99() {
-
-        Yii::$app->db->createCommand('DELETE t1.* FROM my_table t1
-JOIN (SELECT min(id) as minid, brand, product FROM my_table GROUP BY brand, product) t2
-ON t1.id<>t2.minid AND t1.brand=t2.brand AND t1.product=t2.product ')
-                ->execute();
-
-        $str = 'Fast Fifteen blaze';
-        $arr = explode(" ", $str);
-
-        //Последний элемент
-        if (count($arr) > 1) {
-            $strEnd = array_pop($arr);
-            echo $strEnd;
-        }
-
-    }
-  * 
-  */
 
 }
