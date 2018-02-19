@@ -110,7 +110,7 @@ $config = [
             'access' => ['@', '?'],
             'root' => [
                 'path' => 'img/',
-                'name' => 'root'
+                'name' => 'Global'
             ],
         ]
     ],
