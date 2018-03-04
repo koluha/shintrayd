@@ -69,11 +69,11 @@ class BasketController extends Controller {
 
     public function actionAdd() {
         $data = [
-            'count' => Yii::$app->request->post('data_count'),
+            'count' => Yii::$app->request->post('data_count'), //кол-во
             'id' => Yii::$app->request->post('data_id'), //id_product
-            'article' => Yii::$app->request->post('data_article'),
-            'brand' => Yii::$app->request->post('data_brand'),
-            'nomenclature' => Yii::$app->request->post('data_nomenclature')
+            'article' => Yii::$app->request->post('data_article'), //артикул
+            'brand' => Yii::$app->request->post('data_brand'), //бренд
+            'nomenclature' => Yii::$app->request->post('data_nomenclature') 
         ];
 
         $count = $data['count'];
@@ -113,6 +113,8 @@ class BasketController extends Controller {
             'brand' => Yii::$app->request->get('brand'),
             'type' => Yii::$app->request->get('type')
         ];
+        
+        
 
         $basket = new Basket();
         $basket->AdditionItem($data);

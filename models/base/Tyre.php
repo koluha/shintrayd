@@ -36,8 +36,10 @@ class Tyre {
         return $model;
     }
 
-    public function getproduct($id) {
-        $data = Yii::$app->db->createCommand("SELECT * from tb_nomenclature_tyre WHERE id='{$id}' limit 1")
+    public function getproduct($code77, $brand) {
+        $data = Yii::$app->db->createCommand("SELECT * from tb_nomenclature_tyre WHERE code77=:code77 AND brand=:brand limit 1")
+                ->bindValue(':code77', $code77)
+                ->bindValue(':brand', $brand)
                 ->queryOne();
         return $data;
     }
@@ -352,12 +354,10 @@ AND code77=:code77
         }
         return FALSE;
     }
-    
-    
-    
-        public function Load($koef) {
-               
-        $koef = explode("/",$koef);
+
+    public function Load($koef) {
+
+        $koef = explode("/", $koef);
         $arr_load = SpecifTireHelper::LOAD;
 
         foreach ($arr_load as $key => $value) {

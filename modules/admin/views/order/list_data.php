@@ -122,7 +122,12 @@ echo GridView::widget([
 if ($p_price) {
     echo "<h2>Цена за доставку $p_price руб.</h2>";
 }
-$total = $sum + (($p_price) ? $p_price : 0);
+
+
+$total = $total + (($p_price) ? $p_price : 0);
+
+
+
 echo "<h2>Всего " . number_format($total, 0, '', ' ') . " руб.</h2>";
 ?>
             

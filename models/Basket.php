@@ -34,7 +34,10 @@ class Basket extends \yii\db\ActiveRecord {
 
     public function Add($data, $count) {
 
-        $product = $this->product($data['id'], $data['nomenclature']);
+        //Передаем артикул товара и имя номенклатуры диск или шины
+        //code77
+        $product = $this->product($data['article'], $data['brand'], $data['nomenclature']);
+
         $link = OrderProduct::findOne([
                     'article' => $data['article'],
                     'brand' => $data['brand'],
@@ -42,9 +45,13 @@ class Basket extends \yii\db\ActiveRecord {
                     'status' => 0
         ]);
 
+        //Если запись новая создаем ее, в корзину
         if (!$link) {
             $link = new OrderProduct();
         }
+
+
+
         $link->id_order = $this->getOrderId();
         $link->type = $data['nomenclature'];
         $link->brand = $product[($data['nomenclature'] == 'disk' ? 'manufacturer' : 'brand')];
@@ -59,13 +66,14 @@ class Basket extends \yii\db\ActiveRecord {
             $link->size = $this->ob_tyre->getsize($product);
         }
 
-      // Теперь данные с Js
-      //  if (intval($product['total']) >= 4 OR preg_match('/Более/', $product['total'])) {
-      //      $count = 4;
-      //  } elseif (intval($product['total']) < 4) {
-      //      $count = $product['total'];
-      //  }
-      //
+        // Теперь данные с Js
+        //  if (intval($product['total']) >= 4 OR preg_match('/Более/', $product['total'])) {
+        //      $count = 4;
+        //  } elseif (intval($product['total']) < 4) {
+        //      $count = $product['total'];
+        //  }
+        //
+        
         $link->count += $count;
         $link->price = $product['price_roz'];
         $link->status = 0;
@@ -87,6 +95,10 @@ class Basket extends \yii\db\ActiveRecord {
     }
 
     public function AdditionItem($data) {
+        //Сначало найдем максимальное кол-во в прайсе, есть ли добро на увеличение кол-во
+
+        $product = $this->product($data['article'], $data['brand'], $data['type']);
+
         $count = 1;
         $link = OrderProduct::findOne([
                     'id' => $data['id'],
@@ -98,7 +110,12 @@ class Basket extends \yii\db\ActiveRecord {
         if (!$link) {
             return false;
         }
-        $link->count+= $count;
+
+        //Если превышает кол-во общее с уже заданным в корзине 
+        if (($link->count < intval($product['total'])) || (preg_match('/Более/', $product['total']))) {
+            $link->count+= $count;
+        }
+
         $link->update();
     }
 
@@ -121,13 +138,13 @@ class Basket extends \yii\db\ActiveRecord {
     }
 
     //ПОлучить все продукты - прайс диски или шины
-    public function product($id, $nomenclature) {
+    public function product($article, $brand, $nomenclature) {
         if ($nomenclature == 'disk') {
             $model = new Disk;
         } elseif ($nomenclature == 'tyre') {
             $model = new Tyre;
         }
-        $list = $model->getproduct($id);
+        $list = $model->getproduct($article, $brand);
         return $list;
     }
 
@@ -211,7 +228,7 @@ class Basket extends \yii\db\ActiveRecord {
             case 'card':
                 return "Банковской картой";
                 break;
-              case 'account':
+            case 'account':
                 return "Оплата по счету";
                 break;
         }
@@ -228,12 +245,14 @@ class Basket extends \yii\db\ActiveRecord {
 
         $more = 0;
         $more = preg_match('/Более/', strval($count));
-        if ($more) {$count='Более';}
+        if ($more) {
+            $count = 'Более';
+        }
 
 
         switch ($count) {
 
-            case ((intval($count) <= 4) AND ((intval($count) != 0))):      //Если count <= 4 
+            case ((intval($count) <= 4) AND ( (intval($count) != 0))):      //Если count <= 4 
                 for ($i = 1; $i <= $count; $i++) {
                     $arr[$i] = $i;
                 }
@@ -273,7 +292,6 @@ class Basket extends \yii\db\ActiveRecord {
     public function clean() {
         Yii::$app->session->remove(self::SESSION_KEY);
         Yii::$app->session->remove('user_anon');
-        
     }
 
 }

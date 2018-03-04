@@ -91,6 +91,14 @@ class OrderController extends AppAdminController {
                 ->bindValue(':id_order', $id_order)
                 ->queryScalar();
 
+        $total = Yii::$app->db->createCommand('SELECT SUM(p.price*count) 
+                                                      FROM tb_order_product AS p 
+                                                INNER JOIN tb_order AS o ON o.id = p.id_order
+                                                INNER JOIN tb_user AS u ON u.id = o.id_user
+                                            WHERE p.id_order=:id_order')
+                ->bindValue(':id_order', $id_order)
+                ->queryScalar();
+
         $count = Yii::$app->db->createCommand('SELECT COUNT(*)  
                                                       FROM tb_order_product AS p 
                                                 INNER JOIN tb_order AS o ON o.id = p.id_order
@@ -139,7 +147,12 @@ WHERE p.id_order='$id_order'";
             $p_price = $models[0]['d_price'];
         }
 
-        return $this->render('list_data', ['provider' => $provider, 'sum' => $sum, 'p_price' => $p_price]);
+        return $this->render('list_data', [
+                    'provider' => $provider,
+                    'sum' => $sum,
+                    'p_price' => $p_price,
+                    'total' => $total
+        ]);
     }
 
 }

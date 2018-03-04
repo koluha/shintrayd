@@ -45,9 +45,20 @@ class Disk {
 
     //Получить модели шин по производителю
     //[]
-    public function getproduct($id) {
-        $data = Yii::$app->db->createCommand("SELECT * from tb_nomenclature_disk WHERE id='{$id}'")
+ //   public function getproduct($id) {
+  //      $data = Yii::$app->db->createCommand("SELECT * from tb_nomenclature_disk WHERE id='{$id}'")
+  //              ->queryOne();
+  //      return $data;
+  //  }
+
+    //Получить продукт по артиклу и бренду
+    //эту функция чтобы кол-во в корзине при добавлеении не прибавлялось
+    public function getproduct($code77, $brand) {
+        $data = Yii::$app->db->createCommand('SELECT * from tb_nomenclature_disk WHERE code77=:code77 AND manufacturer=:brand')
+                ->bindValue(':code77', $code77)
+                ->bindValue(':brand', $brand)
                 ->queryOne();
+
         return $data;
     }
 
@@ -243,12 +254,12 @@ class Disk {
         if ($vendor == 'КиК') {
             $vendor = 'K&K';
         }
-        
-         if ($vendor =='DOTZ 4X4 STAHLRADER') {
+
+        if ($vendor == 'DOTZ 4X4 STAHLRADER') {
             $vendor = 'Dotz';
         }
-        
-        
+
+
 
 
 
