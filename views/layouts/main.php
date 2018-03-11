@@ -9,8 +9,28 @@ use yii\widgets\Breadcrumbs;
 use app\assets\FrontAsset;
 use yii\helpers\Url;
 use app\models\Basket;
+use yii\bootstrap\Carousel;
 
 FrontAsset::register($this);
+
+
+$carousel = [
+    [
+        'content' => '<img src="/img/slide-1247x392.jpg"/>',
+        'caption' => '<div class="slade_shin"><h1>Шины и диски</h1><p>большой выбор продукций</p><p><a href="/article/link/1" class="btn btn-primary">Подробнее <span class="glyphicon glyphicon-chevron-right"></a></p></div>',
+        'options' => ['class' => 'slade_shin','text-align' => 'left']
+    ],
+    [
+        'content' => '<img src="/img/avtoservis.jpg"/>',
+        'caption' => '<h1>Автосервис</h1><p> услуги по ремонту и обслуживанию автомобилей</p>',
+        'options' => ['class' => 'slade_avtoservis']
+    ],
+    [
+        'content' => '<img src="/img/shino.jpg"/>',
+        'caption' => '<h1>Шиномонтаж</h1><p>Полный комплекс услуг по работе с колесами</p>',
+        'options' => ['class' => 'slade_shino_montag']
+    ]
+];
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -155,7 +175,16 @@ FrontAsset::register($this);
                     <div class="row">
                         <!-- slider (Слайдер) -->
                         <div class="slider">
-
+                            <?php
+                            echo Carousel::widget([
+                                'items' => $carousel,
+                                'options' => ['class' => 'carousel slide', 'data-interval' => '30000'],
+                                'controls' => [
+                                    '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
+                                    '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'
+                                ]
+                            ]);
+                            ?>
                         </div>
                         <!-- end slider (Слайдер) -->
                     </div>

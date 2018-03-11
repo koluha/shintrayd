@@ -145,7 +145,8 @@ class Tyre {
         $params = [
             ':brand' => $data['brand'],
             ':season' => $data['season'],
-            ':model' => $data['model'],
+            //':model' => $data['model'],  Был БАГ когда в названии плюс и поиск не проходил
+            ':link_model' => $data['link_model'],
             ':shirina' => $data['shirina'],
             ':profil' => $data['profil'],
             ':diametr' => $data['diametr'],
@@ -157,7 +158,7 @@ class Tyre {
         $post = Yii::$app->db->createCommand("SELECT * FROM tb_nomenclature_tyre WHERE 
 brand=:brand 
 AND season=:season
-AND model=:model
+AND link_model=:link_model
 AND shirina=:shirina
 AND profil=:profil
 AND diametr=:diametr

@@ -105,10 +105,8 @@ class TyreController extends Controller {
             'shirina' => $this->rq->get('shirina'),
             'profil' => $this->rq->get('profil'),
             'diametr' => $this->rq->get('diametr'),
-            
             'spikes' => $this->rq->get('spikes'),
             'not_spikes' => $this->rq->get('not_spikes'),
-            
             'runflat' => $this->rq->get('runflat'),
             'coef_speed' => $this->rq->get('coef_speed')
         ];
@@ -134,7 +132,5 @@ class TyreController extends Controller {
             return $this->render('list_empty', ['data' => $data]);
         }
     }
-
-
 
 }

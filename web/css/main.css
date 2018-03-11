@@ -262,10 +262,10 @@ input[type="submit"] {
 }
 
 .slider{
-    background: url(../img/slide-1247x392.png) no-repeat 90% 10%;
+    // background: url(../img/slide-1247x392.png) no-repeat 90% 10%;
     height: 250px;
     margin: 5px 0 5px 0;
-    border-radius: 4px;
+    // border-radius: 4px;
 }
 
 
@@ -2368,7 +2368,7 @@ p .info_pr{
     text-align: center;
     color: #000;
     text-decoration: none;
-   // font-size: 24px;
+    // font-size: 24px;
     font-weight: 700;
     height: 200px;
     width: 320px;
@@ -2401,10 +2401,19 @@ p .info_pr{
 
 }​
 .autoservice li span:hover{ 
-  display: flex;
-   transition: 2s;
+    display: flex;
+    transition: 2s;
 }​
 
-
-
 /* End Страница автосервиса */
+
+/* Страница Слайда */
+.carousel-caption_my{
+    height: 90px;
+    width: 200px;
+    background: #009900;
+    text-align: left!important; 
+}
+/* End Страница Слайда */
+
+
