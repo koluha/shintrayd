@@ -1,4 +1,9 @@
 $(document).ready(function() {
+
+    $('.carousel').carousel({
+        interval: 7000
+    });
+
     /* Обработчик Фиксакций меню фильтра*/
     var StickyElement = function(node) {
         var doc = $(document),

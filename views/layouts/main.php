@@ -9,28 +9,8 @@ use yii\widgets\Breadcrumbs;
 use app\assets\FrontAsset;
 use yii\helpers\Url;
 use app\models\Basket;
-use yii\bootstrap\Carousel;
 
 FrontAsset::register($this);
-
-
-$carousel = [
-    [
-        'content' => '<img src="/img/slide-1247x392.jpg"/>',
-        'caption' => '<div class="slade_shin"><h1>Шины и диски</h1><p>большой выбор продукций</p><p><a href="/article/link/1" class="btn btn-primary">Подробнее <span class="glyphicon glyphicon-chevron-right"></a></p></div>',
-        'options' => ['class' => 'slade_shin','text-align' => 'left']
-    ],
-    [
-        'content' => '<img src="/img/avtoservis.jpg"/>',
-        'caption' => '<h1>Автосервис</h1><p> услуги по ремонту и обслуживанию автомобилей</p>',
-        'options' => ['class' => 'slade_avtoservis']
-    ],
-    [
-        'content' => '<img src="/img/shino.jpg"/>',
-        'caption' => '<h1>Шиномонтаж</h1><p>Полный комплекс услуг по работе с колесами</p>',
-        'options' => ['class' => 'slade_shino_montag']
-    ]
-];
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -39,11 +19,8 @@ $carousel = [
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
         <?= Html::csrfMetaTags() ?>
-
         <meta charset="<?= Yii::$app->charset ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
 
         <!--  <meta name="description" content="" />-->
         <!-- <meta name = "viewport" content = "width = 1200">-->
@@ -56,6 +33,7 @@ $carousel = [
         <!--  <link rel="stylesheet" href="css/main.css" />--> <!-- Стили  -->
         <!--  <script src="libs/jquery/jquery-1.11.1.min.js"></script>--> <!-- jquery  -->
        <!--   <script src="js/command.js"></script>--> <!-- jquery  код-->
+
     </head>
     <body>
         <?php $this->beginBody() ?>
@@ -169,22 +147,76 @@ $carousel = [
                     </div>
                     <!-- end menu (Горизонтальное меню) -->
                 </div>
-
-
                 <div class="container">
                     <div class="row">
                         <!-- slider (Слайдер) -->
                         <div class="slider">
-                            <?php
-                            echo Carousel::widget([
-                                'items' => $carousel,
-                                'options' => ['class' => 'carousel slide', 'data-interval' => '30000'],
-                                'controls' => [
-                                    '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
-                                    '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'
-                                ]
-                            ]);
-                            ?>
+
+                            <!-- Стили CSS -->
+                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                                </ol>
+
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="/img/slide_1.jpg" alt="Магазин шин и дисков">
+                                        <div class="carousel-caption">
+                                            <div class="carousel_link">
+                                                <h1>Шины и диски</h1>
+                                                <p>По разумным ценам любые интересующие Вас покрышки из всех каталогов</p>
+                                                <?= Html::a('<p class="link_search_sh">Поиск шин</p>','/tyre');
+                                                ?>
+                                                <?= Html::a('<p class="link_search_d">Поиск дисков</p>', '/disk');
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="/img/slide_2.jpg" alt="Автосервис">
+                                        <div class="carousel-caption">
+                                            <div class="carousel_link">
+                                                <?= Html::a(' 
+                                                    <h1>Автосервис</h1>
+                                                    <p>Услуги по ремонту и обслуживанию автомобилей</p>
+                                                    <p class="link_">Подробнее</p>
+                                                    ', '/autoservice')
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="/img/slide_3.jpg" alt="Шиномонтаж">
+                                        <div class="carousel-caption">
+                                            <div class="carousel_link">
+                                                <?= Html::a(' 
+                                                    <h1>Шиномонтаж</h1>
+                                                    <p>Полный комплекс услуг по работе с колесами</p>
+                                                    <p class="link_">Подробнее</p>
+                                                    ', '/mounting')
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Left and right controls -->
+                                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+
                         </div>
                         <!-- end slider (Слайдер) -->
                     </div>

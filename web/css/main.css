@@ -2408,12 +2408,86 @@ p .info_pr{
 /* End Страница автосервиса */
 
 /* Страница Слайда */
-.carousel-caption_my{
-    height: 90px;
-    width: 200px;
-    background: #009900;
-    text-align: left!important; 
+.block{
+    background: red;
+    height: 200px;
 }
+
+.carousel-caption{
+    position: absolute;
+    top:20px;
+    font-size: 3em;
+    left: 15%;
+    text-align: left;
+    color: white;
+    display: block;
+    width: 380px;
+    padding: 0;
+    margin: 0;
+}
+
+.carousel_link a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+
+.carousel-caption h1{
+    font-size: 46px;
+    line-height: 46px;
+}
+.carousel-caption p{
+    font-size: 24px;
+    line-height: 24px;
+}
+
+.carousel-caption .link_{
+    display: inline;
+    float: right;
+    font-size: 18px;
+    background: #009900;
+    padding: 4px 30px;
+    margin: 0;
+    margin-right: 30px;
+    text-transform:uppercase;
+    line-height: 24px;
+    text-align: right;
+}
+
+.carousel-caption .link_search_sh{
+    display: inline;
+    float: right;
+    font-size: 18px;
+    background: #009900;
+    padding: 4px 30px;
+    margin: 0;
+    text-transform:uppercase;
+    line-height: 24px;
+    text-align: right;
+    float: left;
+}
+
+.carousel-caption .link_search_d{
+    display: inline;
+    float: right;
+    font-size: 18px;
+    background: #009900;
+    padding: 4px 30px;
+    margin: 0;
+    text-transform:uppercase;
+    line-height: 24px;
+    text-align: right;
+    float: right;
+}
+.carousel-caption .link_:hover{
+    background: #005a00;
+}
+
+/* Убрать снежинки */
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
+    height: 1px!important;
+}
+
 /* End Страница Слайда */
 
 
