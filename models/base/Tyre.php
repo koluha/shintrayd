@@ -174,7 +174,7 @@ AND code77=:code77
     public function BrandTyresDr() {
         $data = Yii::$app->db->createCommand('SELECT link_brand,brand from tb_nomenclature_tyre GROUP BY brand ORDER BY brand')
                 ->queryAll();
-        $r['ALL'] = 'Все произодители';
+        $r['ALL'] = 'Все производители';
         foreach ($data as $key => $value) {
             $r[$value['link_brand']] = ucfirst(strtolower($value['brand']));
         }

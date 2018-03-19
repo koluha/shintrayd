@@ -101,7 +101,7 @@ class Disk {
     public function BrandDisksDr() {
         $data = Yii::$app->db->createCommand('SELECT link_manufacturer,manufacturer from tb_nomenclature_disk GROUP BY manufacturer ORDER BY manufacturer')
                 ->queryAll();
-        $r['ALL'] = 'Все произодители';
+        $r['ALL'] = 'Все производители';
         foreach ($data as $key => $value) {
             $r[$value['link_manufacturer']] = ucfirst(strtolower($value['manufacturer']));
         }
