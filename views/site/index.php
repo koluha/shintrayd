@@ -12,7 +12,7 @@ $ob_disk = new Disk();
 $ob_podbor = new Podbor();
 $session = Yii::$app->session;
 
-$this->title='';
+$this->title = '';
 $meta_description = '';
 $meta_keywords = '';
 
@@ -28,7 +28,6 @@ $this->registerMetaTag([
     'name' => 'description',
     'content' => $meta_description ? $meta_description : Yii::$app->params['meta_description'],
 ]);
-
 ?>
 <!-- main-filter-tabs (основной блок фильтр) -->
 <div class="container main-filter-tabs">
@@ -382,7 +381,6 @@ $this->registerMetaTag([
 </div>
 <!-- end main-filter-tabs (основной блок фильтр) -->
 
-
 <div class="container">
     <div class="row">
         <h1>Интернет-магазин автомобильных шин и дисков N-TYRE.NET</h1>
@@ -392,11 +390,16 @@ $this->registerMetaTag([
         <p><span style="font-size: 14px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
 
 
-        <h1>Расшифровка параметров шин</h1>
-        <img class="center-block" src="/img/unnamed.jpg">
+        <div  class="left-col">
+            <h1>Расшифровка параметров шин</h1>
+            <img  style="width: 106%" src="/img/unnamed.jpg"> 
+        </div>
 
-        <h1>Расшифровка параметров дисков</h1>
-        <img class="center-block" src="/img/img_1325.jpg"> 
+        <div class="right-col">
+            <h1>Расшифровка параметров дисков</h1>
+            <img  src="/img/img_1325.jpg"> 
+        </div>
+
     </div>
 </div>
 
