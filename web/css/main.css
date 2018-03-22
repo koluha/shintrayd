@@ -2258,7 +2258,6 @@ p .info_pr{
 /* End Корзина */
 
 /* Страница автосервиса */
-
 .autoservice{
     display: block;
     margin: auto; /* Выравниваем по центру */
@@ -2271,96 +2270,6 @@ p .info_pr{
     margin-top: 10px;
 }
 
-.autoservice li a.svarka_argon{
-    background: #fff url(/img/page/svarka_argon.jpg) no-repeat;
-}
-.autoservice li a.svarka_argon:hover{
-    background: #fff url(/img/page/svarka_argon_.jpg) no-repeat;
-    transition: 0.5s;
-}
-
-.autoservice li a.tonirovka_i_broneplenka{
-    background: #fff url(/img/page/tonirovka_i_broneplenka.jpg) no-repeat;
-}
-.autoservice li a.tonirovka_i_broneplenka:hover{
-    background: #fff url(/img/page/tonirovka_i_broneplenka_.jpg) no-repeat;
-    transition: 0.5s;
-}
-
-.autoservice li a.avtozapchasti{
-    background: #fff url(/img/page/avtozapchasti.jpg) no-repeat;
-}
-.autoservice li a.avtozapchasti:hover{
-    background: #fff url(/img/page/avtozapchasti_.jpg) no-repeat;
-    transition: 0.5s;
-}
-
-.autoservice li a.komputernaja_diagnostika{
-    background: #fff url(/img/page/komputernaja_diagnostika.jpg) no-repeat;
-}
-.autoservice li a.komputernaja_diagnostika:hover{
-    background: #fff url(/img/page/komputernaja_diagnostika_.jpg) no-repeat;
-    transition: 0.5s;
-}
-
-.autoservice li a.remont_dvigatelej{
-    background: #fff url(/img/page/remont_dvigatelej.jpg) no-repeat;
-}
-.autoservice li a.remont_dvigatelej:hover{
-    background: #fff url(/img/page/remont_dvigatelej_.jpg) no-repeat;
-    transition: 0.5s;
-}
-
-
-.autoservice li a.remont_transmissii{
-    background: #fff url(/img/page/remont_transmissii.jpg) no-repeat;
-}
-.autoservice li a.remont_transmissii:hover{
-    background: #fff url(/img/page/remont_transmissii_.jpg) no-repeat;
-    transition: 0.5s;
-}
-
-.autoservice li a.remont_tormoznoj_sistemy{
-    background: #fff url(/img/page/remont_tormoznoj_sistemy.jpg) no-repeat;
-}
-.autoservice li a.remont_tormoznoj_sistemy:hover{
-    background: #fff url(/img/page/remont_tormoznoj_sistemy_.jpg) no-repeat;
-    transition: 0.5s;
-}
-
-
-.autoservice li a.promyvka_inzhektora{
-    background: #fff url(/img/page/promyvka_inzhektora.jpg) no-repeat;
-}
-.autoservice li a.promyvka_inzhektora:hover{
-    background: #fff url(/img/page/promyvka_inzhektora_.jpg) no-repeat;
-    transition: 0.5s;
-}
-
-.autoservice li a.zapravka_i_remont_avtokondicionerov{
-    background: #fff url(/img/page/zapravka_i_remont_avtokondicionerov.jpg) no-repeat;
-}
-.autoservice li a.zapravka_i_remont_avtokondicionerov:hover{
-    background: #fff url(/img/page/zapravka_i_remont_avtokondicionerov_.jpg) no-repeat;
-    transition: 0.5s;
-}
-
-.autoservice li a.remont_diskov{
-    background: #fff url(/img/page/remont_diskov.jpg) no-repeat;
-}
-.autoservice li a.remont_diskov:hover{
-    background: #fff url(/img/page/remont_diskov_.jpg) no-repeat;
-    transition: 0.5s;
-}
-
-
-.autoservice li a.pokraska_diskov{
-    background: #fff url(/img/page/pokraska_diskov.jpg) no-repeat;
-}
-.autoservice li a.pokraska_diskov:hover{
-    background: #fff url(/img/page/pokraska_diskov_.jpg) no-repeat;
-    transition: 0.5s;
-}
 
 .autoservice li a{
     display: block;
@@ -2368,7 +2277,7 @@ p .info_pr{
     text-align: center;
     color: #000;
     text-decoration: none;
-    // font-size: 24px;
+    font-size: 24px;
     font-weight: 700;
     height: 200px;
     width: 320px;
@@ -2378,34 +2287,78 @@ p .info_pr{
     z-index: 899;
 }
 
-.sp_au{
-    font-size: 0.2px;
-}
-.sp_au:hover{
-    font-size: 24px;
-}
-
-
-.autoservice li .sp_au{ 
+.autoservice .parency{
+    display: none;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    display: flex;
+    top: 0px;
+    background: rgba(255,255,255,0.8);
+}
+
+.autoservice .block_svarka_argon{
+    background: #fff url(/img/page/svarka_argon.jpg) no-repeat;
+}
+
+.autoservice .block_tonirovka_i_broneplenka{
+    background: #fff url(/img/page/tonirovka_i_broneplenka.jpg) no-repeat;
+}
+
+.autoservice .block_avtozapchasti_v_nalichii_i_pod_zakaz{
+    background: #fff url(/img/page/avtozapchasti.jpg) no-repeat;
+}
+
+.autoservice .block_kompyuternaya_diagnostika_avtomobilya{
+    background: #fff url(/img/page/komputernaja_diagnostika.jpg) no-repeat;
+}
+
+.autoservice .block_remont_dvigateley{
+    background: #fff url(/img/page/remont_dvigatelej.jpg) no-repeat;
+}
+
+.autoservice .block_remont_i_obslujivanie_transmissii{
+    background: #fff url(/img/page/remont_transmissii.jpg) no-repeat;
+}
+
+.autoservice .block_remont_i_obslujivanie_tormoznoy_sistemyi{
+    background: #fff url(/img/page/remont_tormoznoj_sistemy.jpg) no-repeat;
+}
+
+.autoservice .block_promyivka_injektora{
+    background: #fff url(/img/page/promyvka_inzhektora.jpg) no-repeat;
+}
+
+.autoservice .block_zapravka_i_remont_avtokonditsionerov{
+    background: #fff url(/img/page/zapravka_i_remont_avtokondicionerov.jpg) no-repeat;
+}
+
+
+.autoservice .block_remont_diskov{
+    background: #fff url(/img/page/remont_diskov.jpg) no-repeat;
+}
+
+.autoservice .block_pokraska_diskov{
+    background: #fff url(/img/page/pokraska_diskov.jpg) no-repeat;
+}
+
+/*Правило display: flex в jquery */
+.autoservice li .sp_au{ 
+    display: none;
+    position: absolute;
+    top: 11px;   
+    font-size: 24px;
     text-align:  center;
     justify-content: center;
     align-items: center;
     height: 100%;
     width: 100%;
-    //font-size: 24px;
-    // margin-top: 55px;
     font-weight: 700;
     z-index: 999;
-
 }​
-.autoservice li span:hover{ 
-    display: flex;
-    transition: 2s;
-}​
-
 /* End Страница автосервиса */
+
+
+
 
 /* Страница Слайда */
 .block{

@@ -22,6 +22,8 @@ $this->registerMetaTag([
     'content' => $meta_description ? $meta_description : Yii::$app->params['meta_description'],
 ]);
 ?>
+
+
 <div class="block_breadcrumbs">
     <?php
     echo Breadcrumbs::widget([
@@ -42,59 +44,104 @@ $this->registerMetaTag([
             </p>
             <ul class="autoservice">
                 <li>
-                    <?=
-                    Html::a('<span class="sp_au">Сварка Аргон(TIG\MIG)</span>', ['site/page', 'url' => 'svarka_argon'],['class' => 'svarka_argon']);
-                    ?>
+                    <div class="block_svarka_argon">
+                        <a href="/page?url=svarka_argon">
+                            <span class="sp_au">Сварка Аргон(TIG\MIG)</span>
+                        </a>
+                    </div>
+                    <div class="parency">
+                    </div>
                 </li>
+                
                 <li>
-                    <?=
-                    Html::a('<span class="sp_au">Тонировка и бронепленка</span>',['site/page', 'url' => 'tonirovka_i_broneplenka'], ['class' => 'tonirovka_i_broneplenka']);
-                    ?>
+                    <div class="block_tonirovka_i_broneplenka">
+                        <a href="/page?url=tonirovka_i_broneplenka">
+                            <span class="sp_au">Тонировка и бронепленка</span>
+                        </a>
+                    </div>
+                    <div class="parency">
+                    </div>
                 </li>
-                <li>
-                    <?=
-                    Html::a('<span class="sp_au">Автозапчасти (в наличии и под заказ)</span>',['site/page', 'url' => 'avtozapchasti_v_nalichii_i_pod_zakaz'], ['class' => 'avtozapchasti']);
-                    ?>
+                 <li>
+                    <div class="block_avtozapchasti_v_nalichii_i_pod_zakaz">
+                        <a href="/page?url=avtozapchasti_v_nalichii_i_pod_zakaz">
+                            <span class="sp_au">Автозапчасти (в наличии и под заказ)</span>
+                        </a>
+                    </div>
+                    <div class="parency">
+                    </div>
                 </li>
-                <li>
-                    <?=
-                    Html::a('<span class="sp_au">Компьютерная диагностика автомобиля</span>',['site/page', 'url' => 'kompyuternaya_diagnostika_avtomobilya'], ['class' => 'komputernaja_diagnostika']);
-                    ?>
+                 <li>
+                    <div class="block_kompyuternaya_diagnostika_avtomobilya">
+                        <a href="/page?url=kompyuternaya_diagnostika_avtomobilya">
+                            <span class="sp_au">Компьютерная диагностика автомобиля</span>
+                        </a>
+                    </div>
+                    <div class="parency">
+                    </div>
                 </li>
-                <li>
-                    <?=
-                    Html::a('<span class="sp_au">Ремонт двигателей</span>',['site/page', 'url' => 'remont_dvigateley'], ['class' => 'remont_dvigatelej']);
-                    ?>
+                 <li>
+                    <div class="block_remont_dvigateley">
+                        <a href="/page?url=remont_dvigateley">
+                            <span class="sp_au">Ремонт двигателей</span>
+                        </a>
+                    </div>
+                    <div class="parency">
+                    </div>
                 </li>
-                <li>
-                    <?=
-                    Html::a('<span class="sp_au">Ремонт и обслуживание трансмиссии</span>',['site/page', 'url' => 'remont_i_obslujivanie_transmissii'], ['class' => 'remont_transmissii']);
-                    ?>
+                 <li>
+                    <div class="block_remont_i_obslujivanie_transmissii">
+                        <a href="/page?url=remont_i_obslujivanie_transmissii">
+                            <span class="sp_au">Ремонт и обслуживание трансмиссии</span>
+                        </a>
+                    </div>
+                    <div class="parency">
+                    </div>
                 </li>
-                <li>
-                    <?=
-                    Html::a('<span class="sp_au">Ремонт и обслуживание тормозной системы</span>',['site/page', 'url' => 'remont_i_obslujivanie_tormoznoy_sistemyi'], ['class' => 'remont_tormoznoj_sistemy']);
-                    ?>
+                 <li>
+                    <div class="block_remont_i_obslujivanie_tormoznoy_sistemyi">
+                        <a href="/page?url=remont_i_obslujivanie_tormoznoy_sistemyi">
+                            <span class="sp_au">Ремонт и обслуживание тормозной системы</span>
+                        </a>
+                    </div>
+                    <div class="parency">
+                    </div>
                 </li>
-                <li>
-                    <?=
-                    Html::a('<span class="sp_au">Промывка инжектора</span>',['site/page', 'url' => 'promyivka_injektora'], ['class' => 'promyvka_inzhektora']);
-                    ?>
+                 <li>
+                    <div class="block_promyivka_injektora">
+                        <a href="/page?url=promyivka_injektora">
+                            <span class="sp_au">Промывка инжектора</span>
+                        </a>
+                    </div>
+                    <div class="parency">
+                    </div>
                 </li>
-                <li>
-                    <?=
-                    Html::a('<span class="sp_au">Заправка и ремонт автокондиционеров</span>',['site/page', 'url' => 'zapravka_i_remont_avtokonditsionerov'], ['class' => 'zapravka_i_remont_avtokondicionerov']);
-                    ?>
+                 <li>
+                    <div class="block_zapravka_i_remont_avtokonditsionerov">
+                        <a href="/page?url=zapravka_i_remont_avtokonditsionerov">
+                            <span class="sp_au">Заправка и ремонт автокондиционеров</span>
+                        </a>
+                    </div>
+                    <div class="parency">
+                    </div>
                 </li>
-                <li>
-                    <?=
-                    Html::a('<span class="sp_au">Ремонт дисков</span>',['site/page', 'url' => 'remont_diskov'], ['class' => 'remont_diskov']);
-                    ?>
+                 <li>
+                    <div class="block_remont_diskov">
+                        <a href="/page?url=remont_diskov">
+                            <span class="sp_au">Ремонт дисков</span>
+                        </a>
+                    </div>
+                    <div class="parency">
+                    </div>
                 </li>
-                <li>
-                    <?=
-                    Html::a('<span class="sp_au">Покраска дисков</span>',['site/page', 'url' => 'pokraska_diskov'], ['class' => 'pokraska_diskov']);
-                    ?>
+                 <li>
+                    <div class="block_pokraska_diskov">
+                        <a href="/page?url=pokraska_diskov">
+                            <span class="sp_au">Покраска дисков</span>
+                        </a>
+                    </div>
+                    <div class="parency">
+                    </div>
                 </li>
             </ul>
         </div>

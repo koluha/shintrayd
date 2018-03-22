@@ -152,5 +152,16 @@ $(document).ready(function() {
                 }
             }
     );
+
+    /* Обработчик блоков автосервис*/
+    $('.autoservice li').hover(function() {
+        $(this).find('.sp_au').css("display", "flex").fadeIn("slow");
+        $(this).find('.parency').fadeIn("slow");
+    },
+            function() {
+                $(this).find('.sp_au').fadeOut("slow");
+                $(this).find('.parency').fadeOut("slow");
+            });
+
 });
 
