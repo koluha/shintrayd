@@ -60,7 +60,7 @@ $this->registerMetaTag([
                         </div>
                         <div class="right-col">
                             <div id="select-season">
-                                <?= Html::dropDownList('season', (isset($session['search_tyre']['season'])) ? $session['search_tyre']['season'] : 'W', $ob_tyre->TyresSeasonDr(), ['id' => 'select-bus-manufacturers']); ?>
+                                <?= Html::dropDownList('season', (isset($session['search_tyre']['season'])) ? $session['search_tyre']['season'] : $ob_tyre->switch_drop(), $ob_tyre->TyresSeasonDr(), ['id' => 'select-bus-manufacturers']); ?>
                             </div>
                         </div>
                         <div class="sel-row">

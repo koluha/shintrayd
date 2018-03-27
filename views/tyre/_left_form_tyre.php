@@ -66,7 +66,7 @@ $session = Yii::$app->session;
 
                     </div>
                     <div class="check-block">
-                        <?= Html::dropDownList('season', (isset($session['search_tyre']['season'])) ? $session['search_tyre']['season'] : 'W', $ob_tyre->TyresSeasonDrTop(), ['id' => 'select-season']); ?>
+                        <?= Html::dropDownList('season', (isset($session['search_tyre']['season'])) ? $session['search_tyre']['season'] : $ob_tyre->switch_drop(), $ob_tyre->TyresSeasonDrTop(), ['id' => 'select-season']); ?>
                     </div>
                 </div>
             </div>

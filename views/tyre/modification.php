@@ -125,7 +125,7 @@ $ob_tyre = new Tyre();
                                             ])
                                             . ' &nbsp;</td>';
 
-                                            echo ' <td>&nbsp;'.' <span title="' . $ob_tyre->Load($value['k_load']) . '">' . $value['k_load'] . '</span>'.'</td>';
+                                            echo ' <td>&nbsp;'.' <span title="' . $ob_tyre->Load($value['k_load']) . '">' . $ob_tyre->dop_load($value['k_load']) . '</span>'.'</td>';
                                             echo ' <td>&nbsp;'.' <span title="'.$ob_tyre->Speed($value['k_speed']).'">'.$value['k_speed'].'</span>'.'</td>';
                                             echo ' <td>&nbsp;' . number_format($value['price_roz'], 0, '', ' ') . ' руб.</td>';
                                             echo ' <td>&nbsp;' . $value['total'] . ' шт.</td>';

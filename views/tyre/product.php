@@ -195,7 +195,7 @@ $ob_tyre = new Tyre();
                     <div class="pr_desc_item clearfix">
                         <div class="pr_desc_parametr">Коэффициент нагрузки:</div>
                         <div class="pr_desc_value">
-                            <span title="<?= $ob_tyre->Load($data['k_load']) ?>"><?= $data['k_load'] ?></span>
+                            <span title="<?= $ob_tyre->Load($data['k_load']) ?>"><?= $ob_tyre->dop_load($data['k_load']) ?></span>
                         </div>
                     </div>
 

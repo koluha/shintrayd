@@ -181,7 +181,7 @@ class PriceUploaderModel extends Model {
             'shirina' => $this->reader->val($row, 'J'),
             'profil' => Yii::$app->myhelper->tyre_profil($this->reader->val($row, 'K')),
             'k_speed' => $this->reader->val($row, 'L'),
-            'k_load' => $this->reader->val($row, 'M'),
+            'k_load' => str_replace("/", "_", $this->reader->val($row, 'M')),
             'markdown' => $this->reader->val($row, 'N'),
             'price_b2b' => $price_b2b,
             'price_roz' => $price_roz,

@@ -106,8 +106,6 @@ $this->params['breadcrumbs'][] = 'Корзина';
                 'article' => $cart['article'],
                 'brand' => $cart['brand'],
                 'type' => $cart['type']]);
-
-
             echo '</td>';
             echo '</tr>';
         }

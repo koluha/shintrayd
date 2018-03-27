@@ -63,7 +63,7 @@ class Tyre {
             $runflat = 'Runflat: да';
         } echo $rext;
 
-        $k_load = ($value['k_load']) ? 'Коэффициент нагрузки:' . $value['k_load'] : '';
+        $k_load = ($value['k_load']) ? 'Коэффициент нагрузки:' . $this->dop_load($value['k_load']) : '';
         $k_speed = ($value['k_speed']) ? 'Коэффициент скорости::' . $value['k_speed'] : '';
 
         $size = $value['shirina'] . ' / ' . $value['profil'] . ' ' . $value['diametr'];
@@ -231,6 +231,25 @@ AND code77=:code77
         return $data;
     }
 
+    //Функция для выпадающего списка какой сезон 
+    function switch_drop() {
+        switch (Yii::$app->params['season_tyre']) {
+            case 'SW':
+                return 'S';
+                break;
+            case 'WS':
+                return 'W';
+                break;
+            case 'S':
+                return 'S';
+                break;
+            case 'W':
+                return 'W';
+                break;
+        }
+    }
+
+    //Функция какие первые выводить шины Л или З
     function SwitchSeason($season) {
         switch ($season) {
             case 'S':
@@ -354,6 +373,13 @@ AND code77=:code77
             }
         }
         return FALSE;
+    }
+    
+    
+    //из 120_50 выполнить 120_50
+    public function dop_load($load){
+        $r=str_replace("_", "-", $load);
+        return $r;
     }
 
     public function Load($koef) {
